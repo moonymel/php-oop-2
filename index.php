@@ -53,6 +53,10 @@
     $item_7 = new Item('Kong Classic', 8, $cani, 'giochi', 'https://arcaplanet.vtexassets.com/arquivos/ids/256599/kong-classic1.jpg');
     $item_8 = new Item('Topini di peluche Trixie', 4, $gatti, 'giochi', 'https://arcaplanet.vtexassets.com/arquivos/ids/223852/trixie-gatto-gioco-active-mouse-peluche.jpg');
 
+    $items = [$item_1, $item_2, $item_3, $item_4, $item_5, $item_6, $item_7, $item_8];
+
+        var_dump($cani);
+        var_dump($item_1)
 
 ?>
 
@@ -64,9 +68,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
+
+<header>
+    <div class="container">
+        <div class="row justify-content-between py-3">
+            <div class="col-6">
+                Zoolean
+            </div>
+            <div class="col-6">
+                questo è un menu bla bla bla
+            </div>
+        </div>
+    </div>
+</header>
+
+<main>
+    <div class="container">
+        <div class="row my-3">
+
+            <?php foreach($items as $item){ ?>
+                <div class="col-3 my-3">
+                    <div class="my_card">
+                        <div class="preview">
+                            <?php echo '<img src="'.$item->image.'">' ?>
+                        </div>
+                        <div class="title d-flex justify-content-between text-center">
+                            <?php echo $item->title ?>
+                            <div class="icon">
+                                <?php foreach($item->animal as $animal) {
+                                    echo '<img src="'.$animal->icon.'">';
+                                } ?>
+                            </div>
+                        </div>
+                        <div class="info">
+                            Categoria: <?php echo $item->type ?><br>
+                            Prezzo: <?php echo $item->price ?>€
+                        </div>
+
+                    </div>
+                </div>
+            <?php } ?>
+        </div>
+    </div>
+</main>
+
     
 </body>
 
