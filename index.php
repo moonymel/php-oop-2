@@ -55,9 +55,6 @@
 
     $items = [$item_1, $item_2, $item_3, $item_4, $item_5, $item_6, $item_7, $item_8];
 
-        var_dump($cani);
-        var_dump($item_1)
-
 ?>
 
 
@@ -96,15 +93,13 @@
                         <div class="preview">
                             <?php echo '<img src="'.$item->image.'">' ?>
                         </div>
-                        <div class="title d-flex justify-content-between text-center">
+                        <div class="title d-flex justify-content-between p-3">
                             <?php echo $item->title ?>
                             <div class="icon">
-                                <?php foreach($item->animal as $animal) {
-                                    echo '<img src="'.$animal->icon.'">';
-                                } ?>
+                                <?php echo '<img src="'.$item->animal->icon.'">'; ?>
                             </div>
                         </div>
-                        <div class="info">
+                        <div class="info p-3">
                             Categoria: <?php echo $item->type ?><br>
                             Prezzo: <?php echo $item->price ?>€
                         </div>

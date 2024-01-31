@@ -13,6 +13,8 @@ header {
 .my_card {
     width: 100%;
     background-color: rgb(238, 238, 238);
+    border: 1px solid rgb(127, 127, 127);
+    height: 500px;
 }
 
 .preview {
@@ -28,4 +30,5 @@ header {
 
 .icon img {
     width: 20px;
+    margin-left: 10px;
 }
